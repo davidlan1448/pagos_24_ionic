@@ -1,0 +1,26 @@
+.input {
+  --background: transparent !important;
+  border-bottom: 1px solid rgb(31, 95, 155);
+  overflow: visible;
+  margin-top: 20px;
+
+  .label {
+    position: absolute;
+    z-index: 10;
+    left: 0px;
+    bottom: 5px;
+    transition: all 0.5s;
+    opacity: 0;
+  }
+
+  ion-input {
+    input {
+      padding: 0 !important;
+    }
+  }
+}
+
+.selected {
+  opacity: 1 !important;
+  bottom: 30px !important;
+}

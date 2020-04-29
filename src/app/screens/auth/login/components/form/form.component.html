@@ -1,0 +1,46 @@
+<form [formGroup]="LoginForm" class="form">
+  <InputPer
+    name="email"
+    title="Email"
+    [isTouched]="getAbstractControl('email').value"
+  >
+    <ion-input
+      placeholder="Email"
+      formControlName="email"
+      mode="ios"
+      clearInput
+      required
+      inputmode="text"
+    ></ion-input>
+  </InputPer>
+
+  <InputPer
+    name="password"
+    title="Password"
+    [isTouched]="getAbstractControl('password').value"
+  >
+    <ion-input
+      placeholder="Password"
+      formControlName="password"
+      type="text"
+      mode="ios"
+      clearInput
+    ></ion-input>
+  </InputPer>
+
+  <div class="check">
+    <label>keep connected</label>
+    <ion-toggle color="primary" mode="ios"></ion-toggle>
+  </div>
+
+  <div class="actions">
+    <ion-button expand="block" color="primary" mode="ios"
+      >Sign in</ion-button
+    >
+    <ion-button expand="block" fill="clear" mode="ios"
+      >Sign up</ion-button
+    >
+  </div>
+
+  <p class="language" (click)="setLanguage()">Change language</p>
+</form>

@@ -1,0 +1,22 @@
+.form {
+  width: 200px;
+
+  .check {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    ion-toggle {
+      margin-left: 10px;
+    }
+  }
+
+  .actions {
+    margin-top: 50px;
+  }
+
+  .language {
+    text-align: center;
+  }
+}
