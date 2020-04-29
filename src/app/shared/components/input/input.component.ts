@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "InputPer",
@@ -9,6 +9,10 @@ export class InputComponent implements OnInit {
   @Input() public name: string = "";
   @Input() public title: string = "";
   @Input() public isTouched: boolean = false;
+  @Input() isPasswordInput: boolean = false;
+  @Output() onShowPassword: EventEmitter<boolean> = new EventEmitter<boolean>();
+  
+  showPassword: boolean = false;
 
   isSelected: boolean = false;
 
@@ -23,5 +27,11 @@ export class InputComponent implements OnInit {
 
   blur() {
     this.isSelected = false;
+  }
+
+  onShowPasswordEmit () {
+    this.showPassword = !this.showPassword;
+    
+    this.onShowPassword.emit(!this.showPassword);
   }
 }

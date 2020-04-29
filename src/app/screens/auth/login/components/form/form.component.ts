@@ -8,7 +8,12 @@ import {
   EventEmitter,
 } from "@angular/core";
 import { Animation, AnimationController } from "@ionic/angular";
-import { FormBuilder, FormGroup, Validators, AbstractControl } from "@angular/forms";
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl,
+} from "@angular/forms";
 
 @Component({
   selector: "Form",
@@ -18,6 +23,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl } from "@angular/fo
 export class FormComponent implements OnInit {
   @Output() selectLanguage = new EventEmitter<null>();
   public LoginForm: FormGroup;
+  public typePassword: string = "password";
 
   constructor(
     public formbuilder: FormBuilder,
@@ -36,16 +42,27 @@ export class FormComponent implements OnInit {
   }
 
   async ngOnInit() {
-    const animation: Animation = this.animationCtrl
+    /* const animation: Animation = this.animationCtrl
       .create()
       .addElement(document.querySelector(".form"))
       .duration(700)
       .fromTo("height", "0px", "379px");
 
-    animation.play().then(() => console.log("Finally"));
+    animation.play().then(() => console.log("Finally")); */
   }
 
-  setLanguage () {
+  /**
+   * @description escucha el evento que cambia el tipo del input password
+   * @param event
+   */
+  handleShowPassword(event: boolean) {
+    this.typePassword = event ? "password" : "text";
+  }
+
+  /**
+   * @description emite un evento para volver a la seleccion de idioma
+   */
+  setLanguage() {
     this.selectLanguage.emit(null);
   }
 

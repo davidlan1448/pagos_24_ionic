@@ -1,4 +1,14 @@
 <ion-item class="input">
   <ion-label class="label" [class.selected]="isTouched">{{ title }}</ion-label>
   <ng-content></ng-content>
+
+  <div *ngIf="isPasswordInput" class="isVisible">
+    <ng-container *ngIf="showPassword; else notShow">
+      <ion-icon (click)="onShowPasswordEmit()" name="eye"></ion-icon>
+    </ng-container>
+
+    <ng-template #notShow>
+      <ion-icon (click)="onShowPasswordEmit()" name="eye-off"></ion-icon>
+    </ng-template>
+  </div>
 </ion-item>

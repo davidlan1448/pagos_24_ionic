@@ -13,13 +13,13 @@ export class LanguageComponent implements OnInit {
   constructor(private animationCtrl: AnimationController) {}
 
   async ngOnInit() {
-    const animation: Animation = this.animationCtrl
+    /* const animation: Animation = this.animationCtrl
       .create()
       .addElement(document.querySelector("#language"))
       .duration(500)
       .fromTo('height', '379px', '120px');
 
-    animation.play().then(() => console.log("Finally"));
+    animation.play().then(() => console.log("Finally")); */
   }
 
   /**

@@ -36,15 +36,13 @@ export class LoginPage implements OnInit {
 
   public handleLanguage(event: string) {
     this.language = event;
-  }
 
-  /**
-   * @description Obtiene el AbstractControl del formulario
-   * @param name Nombre del AbstractControl
-   * @return AbstractControl
-   * @author Miguel Ramírez
-   */
-  public getAbstractControl(name: string): AbstractControl {
-    return this.LoginForm.get(name);
+    const animation: Animation = this.animationCtrl
+      .create()
+      .addElement(document.querySelector("#animate"))
+      .duration(500)
+      .fromTo('height', event ? '0' : '379px', event ? '379px' : '120px');
+
+    animation.play();
   }
 }

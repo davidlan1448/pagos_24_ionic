@@ -8,7 +8,6 @@
       placeholder="Email"
       formControlName="email"
       mode="ios"
-      clearInput
       required
       inputmode="text"
     ></ion-input>
@@ -17,14 +16,15 @@
   <InputPer
     name="password"
     title="Password"
+    [isPasswordInput]="true"
     [isTouched]="getAbstractControl('password').value"
+    (onShowPassword)="handleShowPassword($event)"
   >
     <ion-input
       placeholder="Password"
       formControlName="password"
-      type="text"
+      [type]="typePassword"
       mode="ios"
-      clearInput
     ></ion-input>
   </InputPer>
 
@@ -34,10 +34,12 @@
   </div>
 
   <div class="actions">
-    <ion-button expand="block" color="primary" mode="ios"
-      >Sign in</ion-button
-    >
-    <ion-button expand="block" fill="clear" mode="ios"
+    <ion-button expand="block" color="primary" mode="ios">Sign in</ion-button>
+    <ion-button
+      expand="block"
+      fill="clear"
+      mode="ios"
+      [routerLink]="['/auth/register']"
       >Sign up</ion-button
     >
   </div>

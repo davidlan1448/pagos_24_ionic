@@ -2,12 +2,14 @@
   <div class="container">
     <img width="210" src="../../../../../../assets/images/logo.png" />
 
-    <ng-container *ngIf="!language">
-      <Language (onSelectLanguage)="handleLanguage($event)"></Language>
-    </ng-container>
+    <div id="animate">
+      <div [hidden]="language">
+        <Language (onSelectLanguage)="handleLanguage($event)"></Language>
+      </div>
 
-    <ng-container *ngIf="language">
-      <Form (selectLanguage)="handleLanguage($event)"></Form>
-    </ng-container>
+      <div [hidden]="!language">
+        <Form (selectLanguage)="handleLanguage($event)"></Form>
+      </div>
+    </div>
   </div>
 </ion-content>
