@@ -6,7 +6,10 @@ import {
   AbstractControl,
 } from "@angular/forms";
 import { AnimationController, Animation } from "@ionic/angular";
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from "@ngx-translate/core";
+
+import { AuthService } from "src/app/core/services/auth.service";
+import { toast } from "src/app/utils/sweetalert";
 
 @Component({
   selector: "app-login",
@@ -15,39 +18,57 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LoginPage implements OnInit {
   public language: string = "";
-  public LoginForm: FormGroup;
+  public loadingFormlogin: boolean = false;
 
   constructor(
     public formbuilder: FormBuilder,
     private animationCtrl: AnimationController,
     private translateService: TranslateService,
-  ) {
-    this.LoginForm = this.formbuilder.group({
-      email: [
-        "",
-        Validators.compose([
-          Validators.required,
-          Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"),
-        ]),
-      ],
-      password: ["", Validators.compose([Validators.required])],
-    });
-  }
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {}
+
+  /**
+   * @description realiza el login
+   * @param param0
+   */
+  public submit({ email, password }: any) {
+    this.loadingFormlogin = true;
+
+    this.authService.login(email, password).subscribe(
+      (res) => {
+        this.loadingFormlogin = false;
+
+        this.translateService
+          .get("login")
+          .subscribe((txt) => {
+            toast(txt.messageSuccess, "success");
+          });
+      },
+      (err) => {
+        console.log(err);
+        this.loadingFormlogin = false;
+        this.translateService
+          .get("login")
+          .subscribe((txt) => {
+            toast(txt.messageError, "error");
+          });
+      }
+    );
+  }
 
   public handleLanguage(event: string): void {
     this.language = event;
 
     // cambia el idioma de la aplicacion
-    if (event)
-      this.translateService.use(event);
+    if (event) this.translateService.use(event);
 
     const animation: Animation = this.animationCtrl
       .create()
       .addElement(document.querySelector("#animate"))
       .duration(500)
-      .fromTo('height', event ? '0' : '379px', event ? '379px' : '120px');
+      .fromTo("height", event ? "0" : "379px", event ? "379px" : "120px");
 
     animation.play();
   }

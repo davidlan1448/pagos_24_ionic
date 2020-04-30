@@ -5,9 +5,10 @@ import { IonicModule } from "@ionic/angular";
 import { TranslateModule } from '@ngx-translate/core';
 
 import { InputComponent } from "./components/input/input.component";
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
-  declarations: [InputComponent],
+  declarations: [InputComponent, LoadingComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -16,6 +17,6 @@ import { InputComponent } from "./components/input/input.component";
     TranslateModule,
   ],
 
-  exports: [InputComponent],
+  exports: [InputComponent, LoadingComponent],
 })
 export class SharedModule {}

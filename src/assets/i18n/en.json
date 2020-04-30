@@ -5,7 +5,10 @@
         "keep": "keep connected",
         "titleEmail": "Email",
         "titlePassword": "Password",
-        "change": "Change language"
+        "change": "Change language",
+
+        "messageSuccess": "successful start",
+        "messageError": "failed to start"
     },
     "register": {
         "SignUp": "Sign up",
@@ -29,6 +32,9 @@
         "titleCity": "City or province or colony",
         "titleLandLine": "Landline E.x (0212) 1234567",
         "titleCellPhone": "Cell phone E.x (0414) 1234567",
-        "terms": "I have read and accept the terms and conditions"
+        "terms": "I have read and accept the terms and conditions",
+
+        "messageSuccess": "successful start",
+        "messageError": "failed to start"
     }
 }

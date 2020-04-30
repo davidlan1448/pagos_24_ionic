@@ -21,14 +21,14 @@ import {
   styleUrls: ["./form.component.scss"],
 })
 export class FormComponent implements OnInit {
+  @Input() loadingForm = false;
+
   @Output() selectLanguage = new EventEmitter<null>();
+  @Output("onSubmit") loginEmit = new EventEmitter<null>();
   public LoginForm: FormGroup;
   public typePassword: string = "password";
 
-  constructor(
-    public formbuilder: FormBuilder,
-    private animationCtrl: AnimationController
-  ) {
+  constructor(public formbuilder: FormBuilder) {
     this.LoginForm = this.formbuilder.group({
       email: [
         "",
@@ -41,14 +41,10 @@ export class FormComponent implements OnInit {
     });
   }
 
-  async ngOnInit() {
-    /* const animation: Animation = this.animationCtrl
-      .create()
-      .addElement(document.querySelector(".form"))
-      .duration(700)
-      .fromTo("height", "0px", "379px");
+  async ngOnInit() {}
 
-    animation.play().then(() => console.log("Finally")); */
+  public onSubmit(): void {
+    this.loginEmit.emit(this.LoginForm.value);
   }
 
   /**

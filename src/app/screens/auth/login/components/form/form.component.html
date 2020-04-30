@@ -34,7 +34,18 @@
   </div>
 
   <div class="actions">
-    <ion-button expand="block" color="primary" mode="ios">{{ "login.SignIn" | translate }}</ion-button>
+    <ion-button
+      expand="block"
+      color="primary"
+      (click)="onSubmit()"
+      [disabled]="LoginForm.invalid"
+      mode="ios"
+      >
+      <div [hidden]="loadingForm">
+        {{ "login.SignIn" | translate }}
+      </div>
+      <Loading [hidden]="!loadingForm"></Loading>
+    </ion-button>
     <ion-button
       expand="block"
       fill="clear"
@@ -44,5 +55,7 @@
     >
   </div>
 
-  <p class="language" (click)="setLanguage()">{{ "login.change" | translate }}</p>
+  <p class="language" (click)="setLanguage()">
+    {{ "login.change" | translate }}
+  </p>
 </form>

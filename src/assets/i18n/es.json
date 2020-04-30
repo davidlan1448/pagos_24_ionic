@@ -5,7 +5,10 @@
         "keep": "Mantente conectado",
         "titleEmail": "Email",
         "titlePassword": "Contraseña",
-        "change": "Cambiar idioma"
+        "change": "Cambiar idioma",
+
+        "messageSuccess": "Inicio exitoso",
+        "messageError": "Error al iniciar"
     },
     "register": {
         "SignUp": "Nuevo usuario",
@@ -29,6 +32,9 @@
         "titleCity": "Ciudad, provincia o colonia",
         "titleLandLine": "Teléfono fijo Ej: (0212) 1234567",
         "titleCellPhone": "Celular Ej: (0414) 1234567",
-        "terms": "He leìdo y acepto los términos y condiciones"
+        "terms": "He leìdo y acepto los términos y condiciones",
+
+        "messageSuccess": "Inicio exitoso",
+        "messageError": "Error al iniciar"
     }
 }

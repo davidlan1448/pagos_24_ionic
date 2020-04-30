@@ -8,7 +8,11 @@
       </div>
 
       <div [hidden]="!language">
-        <Form (selectLanguage)="handleLanguage($event)"></Form>
+        <Form
+          [loadingForm]="loadingFormlogin"
+          (selectLanguage)="handleLanguage($event)"
+          (onSubmit)="submit($event)"
+        ></Form>
       </div>
     </div>
   </div>
