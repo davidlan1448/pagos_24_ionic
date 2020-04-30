@@ -16,14 +16,18 @@ import {
 } from "@angular/forms";
 
 @Component({
-  selector: "Form",
+  selector: "FormRegister",
   templateUrl: "./form.component.html",
   styleUrls: ["./form.component.scss"],
 })
-export class FormComponent implements OnInit {
+export class FormRegisterComponent implements OnInit {
   @Output() selectLanguage = new EventEmitter<null>();
   public LoginForm: FormGroup;
+
   public typePassword: string = "password";
+  public typeCorfirnPassword: string = "password";
+  public typePin: string = "password";
+  public typeCorfirnPin: string = "password";
 
   constructor(
     public formbuilder: FormBuilder,
@@ -37,7 +41,11 @@ export class FormComponent implements OnInit {
           Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"),
         ]),
       ],
+      cEmail: ["", Validators.compose([Validators.required])],
       password: ["", Validators.compose([Validators.required])],
+      cPassword: ["", Validators.compose([Validators.required])],
+      pin: ["", Validators.compose([Validators.required])],
+      cPin: ["", Validators.compose([Validators.required])],
     });
   }
 
@@ -55,15 +63,20 @@ export class FormComponent implements OnInit {
    * @description escucha el evento que cambia el tipo del input password
    * @param event
    */
-  handleShowPassword(event: boolean): void {
+  handleShowPassword(event: boolean) {
     this.typePassword = event ? "password" : "text";
   }
 
-  /**
-   * @description emite un evento para volver a la seleccion de idioma
-   */
-  setLanguage(): void {
-    this.selectLanguage.emit(null);
+  handleShowCorfirnPassword(event: boolean) {
+    this.typeCorfirnPassword = event ? "password" : "text";
+  }
+
+  handleShowPin(event: boolean) {
+    this.typePin = event ? "password" : "text";
+  }
+
+  handleShowCorfirnPin(event: boolean) {
+    this.typeCorfirnPin = event ? "password" : "text";
   }
 
   /**

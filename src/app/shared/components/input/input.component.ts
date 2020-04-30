@@ -6,12 +6,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./input.component.scss"],
 })
 export class InputComponent implements OnInit {
-  @Input() public name: string = "";
   @Input() public title: string = "";
   @Input() public isTouched: boolean = false;
   @Input() isPasswordInput: boolean = false;
-  @Output() onShowPassword: EventEmitter<boolean> = new EventEmitter<boolean>();
-  
+  @Input() colorText: string = 'black';
+  @Input() showBtnInfo: boolean = false;
+
+  @Output("onShowPassword") showPasswordEmit: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output("onClickInfo") infoEmiter: EventEmitter<any> = new EventEmitter<any>();
+
   showPassword: boolean = false;
 
   isSelected: boolean = false;
@@ -21,17 +24,21 @@ export class InputComponent implements OnInit {
   ngOnInit() {
   }
 
-  focus() {
+  focus(): void {
     this.isSelected = true;
   }
 
-  blur() {
+  blur(): void {
     this.isSelected = false;
   }
 
-  onShowPasswordEmit () {
+  onShowPassword (): void {
     this.showPassword = !this.showPassword;
     
-    this.onShowPassword.emit(!this.showPassword);
+    this.showPasswordEmit.emit(!this.showPassword);
+  }
+
+  onClickInfo(): void {
+    this.infoEmiter.emit();
   }
 }

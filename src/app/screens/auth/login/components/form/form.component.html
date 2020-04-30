@@ -3,6 +3,7 @@
     name="email"
     title="Email"
     [isTouched]="getAbstractControl('email').value"
+    colorText="rgb(223, 223, 223)"
   >
     <ion-input
       placeholder="Email"
@@ -19,6 +20,7 @@
     [isPasswordInput]="true"
     [isTouched]="getAbstractControl('password').value"
     (onShowPassword)="handleShowPassword($event)"
+    colorText="rgb(223, 223, 223)"
   >
     <ion-input
       placeholder="Password"

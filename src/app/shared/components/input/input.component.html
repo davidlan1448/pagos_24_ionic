@@ -1,14 +1,22 @@
-<ion-item class="input">
+<ion-item class="input" [ngStyle]="{'color': colorText}">
   <ion-label class="label" [class.selected]="isTouched">{{ title }}</ion-label>
+
+  <!-- el elemento que se colocara entre llaves debe ser un ion-input o ion-textarea -->
   <ng-content></ng-content>
 
+  <!-- boton para el seleccionado de visivilida de la informacion del input -->
   <div *ngIf="isPasswordInput" class="isVisible">
     <ng-container *ngIf="showPassword; else notShow">
-      <ion-icon (click)="onShowPasswordEmit()" name="eye"></ion-icon>
+      <ion-icon (click)="onShowPassword()" name="eye"></ion-icon>
     </ng-container>
 
     <ng-template #notShow>
-      <ion-icon (click)="onShowPasswordEmit()" name="eye-off"></ion-icon>
+      <ion-icon (click)="onShowPassword()" name="eye-off"></ion-icon>
     </ng-template>
+  </div>
+
+  <!-- boton de informacion -->
+  <div [hidden]="!showBtnInfo" class="isVisible info">
+    <ion-icon (click)="onClickInfo()" name="information-outline"></ion-icon>
   </div>
 </ion-item>

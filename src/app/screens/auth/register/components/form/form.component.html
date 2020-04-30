@@ -1,0 +1,80 @@
+<form [formGroup]="LoginForm" class="form">
+  <InputPer title="Email" [isTouched]="getAbstractControl('email').value">
+    <ion-input
+      placeholder="Email"
+      formControlName="email"
+      mode="ios"
+      required
+      inputmode="text"
+    ></ion-input>
+  </InputPer>
+
+  <InputPer
+    title="Confirm email"
+    [isTouched]="getAbstractControl('cEmail').value"
+  >
+    <ion-input
+      placeholder="Confirm email"
+      formControlName="cEmail"
+      mode="ios"
+      required
+      inputmode="text"
+    ></ion-input>
+  </InputPer>
+
+  <InputPer
+    title="Password"
+    [isPasswordInput]="true"
+    [isTouched]="getAbstractControl('password').value"
+    (onShowPassword)="handleShowPassword($event)"
+  >
+    <ion-input
+      placeholder="Password"
+      formControlName="password"
+      [type]="typePassword"
+      mode="ios"
+    ></ion-input>
+  </InputPer>
+
+  <InputPer
+    title="Confirm password"
+    [isPasswordInput]="true"
+    [isTouched]="getAbstractControl('password').value"
+    (onShowPassword)="handleShowCorfirnPassword($event)"
+  >
+    <ion-input
+      placeholder="Confirm password"
+      formControlName="cPassword"
+      [type]="typeCorfirnPassword"
+      mode="ios"
+    ></ion-input>
+  </InputPer>
+
+  <InputPer
+    title="Operations PIN (6 numbers)"
+    [isPasswordInput]="true"
+    [isTouched]="getAbstractControl('password').value"
+    (onShowPassword)="handleShowPin($event)"
+  >
+    <ion-input
+      placeholder="Operations PIN (6 numbers)"
+      formControlName="pin"
+      [type]="typePin"
+      mode="ios"
+    ></ion-input>
+  </InputPer>
+
+  <InputPer
+    title="Confirm PIN (6 numbers)"
+    [isPasswordInput]="true"
+    [isTouched]="getAbstractControl('password').value"
+    (onShowPassword)="handleShowCorfirnPin($event)"
+  >
+    <ion-input
+      placeholder="Confirm PIN (6 numbers)"
+      formControlName="cPin"
+      [type]="typeCorfirnPin"
+      mode="ios"
+    ></ion-input>
+  </InputPer>
+</form>

@@ -1,0 +1,42 @@
+.headerForm {
+  background: rgb(5, 96, 179);
+
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+
+  h4 {
+    margin: 0;
+  }
+}
+
+.form {
+  padding: 0 10px;
+
+  .check {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    ion-toggle {
+      margin-left: 10px;
+    }
+  }
+
+  .actions {
+    margin-top: 50px;
+  }
+
+  .language {
+    text-align: center;
+  }
+}
+
+.input {
+  --background: transparent !important;
+  border-bottom: 1px solid rgb(31, 95, 155);
+  overflow: visible;
+  margin-top: 20px;
+}

@@ -16,28 +16,32 @@ import {
 } from "@angular/forms";
 
 @Component({
-  selector: "Form",
-  templateUrl: "./form.component.html",
-  styleUrls: ["./form.component.scss"],
+  selector: "FormPersonalInformation",
+  templateUrl: "./formPersonalInformation.component.html",
+  styleUrls: ["./formPersonalInformation.component.scss"],
 })
-export class FormComponent implements OnInit {
+export class FormPersonalInformationComponent implements OnInit {
   @Output() selectLanguage = new EventEmitter<null>();
   public LoginForm: FormGroup;
+
   public typePassword: string = "password";
+  public typeCorfirnPassword: string = "password";
+  public typePin: string = "password";
+  public typeCorfirnPin: string = "password";
 
   constructor(
     public formbuilder: FormBuilder,
     private animationCtrl: AnimationController
   ) {
     this.LoginForm = this.formbuilder.group({
-      email: [
-        "",
-        Validators.compose([
-          Validators.required,
-          Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"),
-        ]),
-      ],
+      names: ["", Validators.compose([Validators.required])],
+      surnames: ["", Validators.compose([Validators.required])],
       password: ["", Validators.compose([Validators.required])],
+      postalCode: ["", Validators.compose([Validators.required])],
+      address: ["", Validators.compose([Validators.required])],
+      city: ["", Validators.compose([Validators.required])],
+      landline: ["", Validators.compose([Validators.required])],
+      cellphone: ["", Validators.compose([Validators.required])],
     });
   }
 
@@ -55,15 +59,8 @@ export class FormComponent implements OnInit {
    * @description escucha el evento que cambia el tipo del input password
    * @param event
    */
-  handleShowPassword(event: boolean): void {
+  handleShowPassword(event: boolean) {
     this.typePassword = event ? "password" : "text";
-  }
-
-  /**
-   * @description emite un evento para volver a la seleccion de idioma
-   */
-  setLanguage(): void {
-    this.selectLanguage.emit(null);
   }
 
   /**
