@@ -10,11 +10,11 @@
   </InputPer>
 
   <InputPer
-    title="Confirm email"
+    [title]="'register.titleConfirnEmail' | translate"
     [isTouched]="getAbstractControl('cEmail').value"
   >
     <ion-input
-      placeholder="Confirm email"
+      [placeholder]="'register.titleConfirnEmail' | translate"
       formControlName="cEmail"
       mode="ios"
       required
@@ -23,13 +23,13 @@
   </InputPer>
 
   <InputPer
-    title="Password"
+    [title]="'register.titlePassword' | translate"
     [isPasswordInput]="true"
     [isTouched]="getAbstractControl('password').value"
     (onShowPassword)="handleShowPassword($event)"
   >
     <ion-input
-      placeholder="Password"
+      [placeholder]="'register.titlePassword' | translate"
       formControlName="password"
       [type]="typePassword"
       mode="ios"
@@ -37,13 +37,13 @@
   </InputPer>
 
   <InputPer
-    title="Confirm password"
+    [title]="'register.titleConfirnPassword' | translate"
     [isPasswordInput]="true"
     [isTouched]="getAbstractControl('password').value"
     (onShowPassword)="handleShowCorfirnPassword($event)"
   >
     <ion-input
-      placeholder="Confirm password"
+      [placeholder]="'register.titleConfirnPassword' | translate"
       formControlName="cPassword"
       [type]="typeCorfirnPassword"
       mode="ios"
@@ -51,13 +51,13 @@
   </InputPer>
 
   <InputPer
-    title="Operations PIN (6 numbers)"
+    [title]="'register.titlePin' | translate"
     [isPasswordInput]="true"
     [isTouched]="getAbstractControl('password').value"
     (onShowPassword)="handleShowPin($event)"
   >
     <ion-input
-      placeholder="Operations PIN (6 numbers)"
+      [placeholder]="'register.titlePin' | translate"
       formControlName="pin"
       [type]="typePin"
       mode="ios"
@@ -65,13 +65,13 @@
   </InputPer>
 
   <InputPer
-    title="Confirm PIN (6 numbers)"
+    [title]="'register.titleConfirnPin' | translate"
     [isPasswordInput]="true"
     [isTouched]="getAbstractControl('password').value"
     (onShowPassword)="handleShowCorfirnPin($event)"
   >
     <ion-input
-      placeholder="Confirm PIN (6 numbers)"
+      [placeholder]="'register.titleConfirnPin' | translate"
       formControlName="cPin"
       [type]="typeCorfirnPin"
       mode="ios"

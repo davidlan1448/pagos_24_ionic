@@ -6,5 +6,29 @@
         "titleEmail": "Email",
         "titlePassword": "Password",
         "change": "Change language"
+    },
+    "register": {
+        "SignUp": "Sign up",
+        "type": "Account type",
+        "business": "Business",
+
+        "titleConfirnEmail": "Confirm email",
+        "titlePassword": "password",
+        "titleConfirnPassword": "Confirm password",
+        "titlePin": "Operations PIN (6 numbers)",
+        "titleConfirnPin": "Confirm PIN (6 numbers)",
+
+        "personalInformation": "Personal information",
+        "titleCountry": "Country of resident",
+        "titleState": "State",
+        "titleNames": "Names",
+        "titleSurnames": "Surnames",
+        "titleCI": "ID number",
+        "titlePostalCode": "Postal code",
+        "titleAddress": "Address",
+        "titleCity": "City or province or colony",
+        "titleLandLine": "Landline E.x (0212) 1234567",
+        "titleCellPhone": "Cell phone E.x (0414) 1234567",
+        "terms": "I have read and accept the terms and conditions"
     }
 }

@@ -6,5 +6,29 @@
         "titleEmail": "Email",
         "titlePassword": "Contraseña",
         "change": "Cambiar idioma"
+    },
+    "register": {
+        "SignUp": "Nuevo usuario",
+        "type": "Tipo de cuenta",
+        "business": "Comercial",
+
+        "titleConfirnEmail": "Confirmar email",
+        "titlePassword": "password",
+        "titleConfirnPassword": "Confirmar contraseña",
+        "titlePin": "Pin de operaciones (6 números)",
+        "titleConfirnPin": "Confirmar PIN (6 números)",
+
+        "personalInformation": "Informacion personal",
+        "titleCountry": "País de residencia",
+        "titleState": "Estado",
+        "titleNames": "Nombres",
+        "titleSurnames": "Apellidos",
+        "titleCI": "Número de cédula",
+        "titlePostalCode": "Código postal",
+        "titleAddress": "Dirección",
+        "titleCity": "Ciudad, provincia o colonia",
+        "titleLandLine": "Teléfono fijo Ej: (0212) 1234567",
+        "titleCellPhone": "Celular Ej: (0414) 1234567",
+        "terms": "He leìdo y acepto los términos y condiciones"
     }
 }
