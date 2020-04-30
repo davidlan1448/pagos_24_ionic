@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { IonicModule } from "@ionic/angular";
+import { TranslateModule } from '@ngx-translate/core';
 
 import { LoginPage } from "./login/login.page";
 import { RegisterPage } from "./register/register.page";
@@ -28,6 +29,7 @@ import { FormPersonalInformationComponent } from "./register/components/formPers
     IonicModule,
     SharedModule,
     ReactiveFormsModule,
+    TranslateModule,
   ],
 })
 export class AuthModule {}

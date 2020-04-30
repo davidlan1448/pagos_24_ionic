@@ -1,0 +1,10 @@
+{
+    "login": {
+        "SignIn": "Sign in",
+        "SignUp": "Sign up",
+        "keep": "keep connected",
+        "titleEmail": "Email",
+        "titlePassword": "Password",
+        "change": "Change language"
+    }
+}

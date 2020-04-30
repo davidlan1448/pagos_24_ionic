@@ -1,12 +1,11 @@
 <form [formGroup]="LoginForm" class="form">
   <InputPer
-    name="email"
-    title="Email"
+    [title]="'login.titleEmail' | translate"
     [isTouched]="getAbstractControl('email').value"
     colorText="rgb(223, 223, 223)"
   >
     <ion-input
-      placeholder="Email"
+      [placeholder]="'login.titleEmail' | translate"
       formControlName="email"
       mode="ios"
       required
@@ -15,15 +14,14 @@
   </InputPer>
 
   <InputPer
-    name="password"
-    title="Password"
+    [title]="'login.titlePassword' | translate"
     [isPasswordInput]="true"
     [isTouched]="getAbstractControl('password').value"
     (onShowPassword)="handleShowPassword($event)"
     colorText="rgb(223, 223, 223)"
   >
     <ion-input
-      placeholder="Password"
+      [placeholder]="'login.titlePassword' | translate"
       formControlName="password"
       [type]="typePassword"
       mode="ios"
@@ -31,20 +29,20 @@
   </InputPer>
 
   <div class="check">
-    <label>keep connected</label>
+    <label>{{ "login.keep" | translate }}</label>
     <ion-toggle color="primary" mode="ios"></ion-toggle>
   </div>
 
   <div class="actions">
-    <ion-button expand="block" color="primary" mode="ios">Sign in</ion-button>
+    <ion-button expand="block" color="primary" mode="ios">{{ "login.SignIn" | translate }}</ion-button>
     <ion-button
       expand="block"
       fill="clear"
       mode="ios"
       [routerLink]="['/auth/register']"
-      >Sign up</ion-button
+      >{{ "login.SignUp" | translate }}</ion-button
     >
   </div>
 
-  <p class="language" (click)="setLanguage()">Change language</p>
+  <p class="language" (click)="setLanguage()">{{ "login.change" | translate }}</p>
 </form>

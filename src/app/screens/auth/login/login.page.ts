@@ -6,6 +6,7 @@ import {
   AbstractControl,
 } from "@angular/forms";
 import { AnimationController, Animation } from "@ionic/angular";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: "app-login",
@@ -18,7 +19,8 @@ export class LoginPage implements OnInit {
 
   constructor(
     public formbuilder: FormBuilder,
-    private animationCtrl: AnimationController
+    private animationCtrl: AnimationController,
+    private translateService: TranslateService,
   ) {
     this.LoginForm = this.formbuilder.group({
       email: [
@@ -34,8 +36,12 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {}
 
-  public handleLanguage(event: string) {
+  public handleLanguage(event: string): void {
     this.language = event;
+
+    // cambia el idioma de la aplicacion
+    if (event)
+      this.translateService.use(event);
 
     const animation: Animation = this.animationCtrl
       .create()

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -13,10 +14,14 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private translateService: TranslateService,
   ) {
     this.initializeApp();
     document.body.classList.toggle('dark', true);
+
+    this.translateService.setDefaultLang('en');
+    this.translateService.use('en');
   }
 
   initializeApp() {

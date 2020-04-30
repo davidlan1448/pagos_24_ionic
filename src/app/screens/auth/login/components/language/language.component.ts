@@ -26,7 +26,7 @@ export class LanguageComponent implements OnInit {
    * @description selecciona el codigo del lenguaje
    * @param language "en" | "es" | "pt"
    */
-  public selectLanguage (language: "en" | "es" | "pt") {
+  public selectLanguage (language: "en" | "es" | "pt"): void {
     this.onSelectLanguage.emit(language);
   }
 }
