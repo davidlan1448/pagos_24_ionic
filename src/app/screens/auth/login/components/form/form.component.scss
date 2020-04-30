@@ -1,5 +1,6 @@
 .form {
   width: 200px;
+  color: white;
 
   .check {
     margin-top: 10px;
@@ -10,10 +11,14 @@
     ion-toggle {
       margin-left: 10px;
     }
+
+    label {
+      font-size: 13px;
+    }
   }
 
   .actions {
-    margin-top: 50px;
+    margin-top: 30px;
   }
 
   .language {
