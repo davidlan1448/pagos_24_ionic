@@ -40,7 +40,7 @@
         "invalidEmail": "Email invalido",
         "invalidConfirmEmail": "Los correos no concuerdan",
         "invalidConfirmPassword": "Las contraseñas no concuerdan",
-        "min6Chart": "Minimo 6 caracteres",
+        "min6Chart": "6 numeros",
         "invalidPins": "El PIN no concuerda"
     }
 }

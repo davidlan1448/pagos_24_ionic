@@ -49,8 +49,22 @@ export class FormRegisterComponent implements OnInit, OnDestroy {
         cEmail: ["", Validators.compose([Validators.required])],
         password: ["", Validators.compose([Validators.required])],
         cPassword: ["", Validators.compose([Validators.required])],
-        pin: ["", Validators.compose([Validators.required, Validators.maxLength(6)])],
-        cPin: ["", Validators.compose([Validators.required, Validators.maxLength(6)])],
+        pin: [
+          "",
+          Validators.compose([
+            Validators.required,
+            Validators.maxLength(6),
+            Validators.minLength(6),
+          ]),
+        ],
+        cPin: [
+          "",
+          Validators.compose([
+            Validators.required,
+            Validators.maxLength(6),
+            Validators.minLength(6),
+          ]),
+        ],
       },
       {
         validator: [
