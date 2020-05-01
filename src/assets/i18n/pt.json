@@ -1,0 +1,49 @@
+{
+    "login": {
+        "SignIn": "Fazer login",
+        "SignUp": "Novo usuário",
+        "keep": "Permanecer ligado",
+        "titleEmail": "E-mail",
+        "titlePassword": "Senha",
+        "change": "Mudar lingua",
+
+        "messageSuccess": "Início bem sucedido",
+        "messageError": "Falha ao iniciar"
+    },
+    "register": {
+        "SignUp": "Novo usuário",
+        "type": "Tipo conta",
+        "business": "Pessoa Jurídica",
+
+        "titleConfirnEmail": "Confirmar e-mail",
+        "titlePassword": "Senha",
+        "titleConfirnPassword": "Confirmar senha",
+        "titlePin": "PIN de operações (6 números)",
+        "titleConfirnPin": "Confirmar PIN (6 números)",
+
+        "personalInformation": "Dados pessoais",
+        "titleCountry": "País de residencia",
+        "titleState": "Estado",
+        "titleNames": "Nomes",
+        "titleSurnames": "Sobrenomes",
+        "titleCI": "Número de ID",
+        "titlePostalCode": "CEP",
+        "titleAddress": "Endereço",
+        "titleCity": "Cidade",
+        "titleLandLine": "Teléfono fixo E.g: (0212) 1234567",
+        "titleCellPhone": "Celular E.x: (0414) 1234567",
+        "terms": "Eu li e aceito os termos e condições",
+
+        "messageSuccess": "Inicio exitoso",
+        "messageError": "Error al iniciar",
+
+        "invalidEmail": "E-mail inválido",
+        "invalidConfirmEmail": "Os e-mails não correspondem",
+        "invalidConfirmPassword": "As senhas não correspondem",
+        "min6Chart": "6 números",
+        "invalidPins": "PIN não corresponde",
+
+        "infoCellPhone": "Un número de telefone de exemplo tem as seguintes características: (0241) 123-4567",
+        "infoLandline": "Un número de telefone de exemplo tem as seguintes características: (0414) 123-4567"
+    }
+}

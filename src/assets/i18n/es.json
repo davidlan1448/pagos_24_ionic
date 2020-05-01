@@ -40,7 +40,7 @@
         "invalidEmail": "Email invalido",
         "invalidConfirmEmail": "Los correos no concuerdan",
         "invalidConfirmPassword": "Las contraseñas no concuerdan",
-        "min6Chart": "6 numeros",
+        "min6Chart": "6 números",
         "invalidPins": "El PIN no concuerda",
 
         "infoCellPhone": "ejemplo de número de teléfono tiene las siguientes características: (0241) 123-4567",
