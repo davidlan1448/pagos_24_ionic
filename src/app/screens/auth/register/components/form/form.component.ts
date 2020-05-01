@@ -82,7 +82,7 @@ export class FormRegisterComponent implements OnInit, OnDestroy {
         if (res === "VALID") {
           this.validFormEmit.emit(this.registerForm.value);
         } else if (res === "INVALID") {
-          this.validFormEmit.emit(null);
+          this.validFormEmit.emit({});
         }
       }
     );

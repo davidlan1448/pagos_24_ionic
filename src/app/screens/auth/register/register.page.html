@@ -8,18 +8,25 @@
       <h4>{{"register.SignUp" | translate}}</h4>
 
       <div class="button">
-        <ion-button fill="clear" color="light">OK</ion-button>
+        <ion-button [disabled]="!disabledSubmit" fill="clear" color="light"
+          >OK</ion-button
+        >
       </div>
     </div>
+
     <div class="title">
       <h5>{{"register.type" | translate}}</h5>
     </div>
 
     <!-- Selecciona el tipo de cuenta a registrar -->
     <div class="accountTypes">
-      <div class="type">
+      <div class="type" (click)="showFormPersonalRegister()">
         <ion-icon name="person-outline"></ion-icon>
         <span>Personal</span>
+
+        <div [hidden]="!showFormPersonal" class="selected">
+          <ion-icon name="checkmark-sharp"></ion-icon>
+        </div>
       </div>
       <div class="type">
         <ion-icon name="business-outline"></ion-icon>
@@ -30,9 +37,15 @@
     <div class="separator"></div>
 
     <!-- FORM REGISTER -->
-    <FormRegister (onValidForm)="handleValidFormRegister($event)"></FormRegister>
+    <FormRegister
+      (onValidForm)="handleValidFormRegister($event)"
+    ></FormRegister>
 
     <!-- FORM PERSONAL INFORMATION -->
-    <FormPersonalInformation></FormPersonalInformation>
+    <ng-container *ngIf="showFormPersonal">
+      <FormPersonalInformation
+        (onValidForm)="handleValidFormPersonalRegister($event)"
+      ></FormPersonalInformation>
+    </ng-container>
   </div>
 </ion-content>

@@ -1,8 +1,11 @@
 <ng-container>
   <ion-item class="input" [ngStyle]="{ color: colorText }">
-    <ion-label class="label" [class.selected]="isTouched">{{
-      title
-    }}</ion-label>
+    <ion-label
+      class="label"
+      [class.textArea]="isTextArea"
+      [class.selected]="isTouched"
+      >{{ title }}</ion-label
+    >
 
     <!-- el elemento que se colocara entre llaves debe ser un ion-input o ion-textarea -->
     <ng-content></ng-content>

@@ -2,7 +2,7 @@ ion-content {
   /* --ion-background-color: rgb(5, 96, 179); */
   --ion-background-color: rgb(255, 255, 255);
   .conatiner {
-    padding-top: 50px;
+    padding-top: 49px;
   }
 
   .header {
@@ -40,6 +40,7 @@ ion-content {
     display: flex;
     justify-content: space-between;
     .type {
+      position: relative;
       width: 50%;
       padding: 20px 0;
       display: flex;
@@ -49,6 +50,12 @@ ion-content {
 
       ion-icon {
         font-size: 30px;
+      }
+
+      .selected {
+        color: #0560b3;
+        position: absolute;
+        right: 15px;
       }
 
       &:first-child {

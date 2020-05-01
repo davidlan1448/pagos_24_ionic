@@ -41,6 +41,9 @@
         "invalidConfirmEmail": "Emails do not match",
         "invalidConfirmPassword": "Passwords do not match",
         "min6Chart": "6 numbers",
-        "invalidPins": "The PIN do not match"
+        "invalidPins": "The PIN do not match",
+
+        "infoCellPhone": "example telephone number has the following characteristics: (0414) 123-4567",
+        "infoLandline": "example telephone number has the following characteristics: (0241) 123-4567"
     }
 }

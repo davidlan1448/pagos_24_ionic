@@ -41,6 +41,9 @@
         "invalidConfirmEmail": "Los correos no concuerdan",
         "invalidConfirmPassword": "Las contraseñas no concuerdan",
         "min6Chart": "6 numeros",
-        "invalidPins": "El PIN no concuerda"
+        "invalidPins": "El PIN no concuerda",
+
+        "infoCellPhone": "ejemplo de número de teléfono tiene las siguientes características: (0241) 123-4567",
+        "infoLandline": "ejemplo de número de teléfono tiene las siguientes características: (0414) 123-4567"
     }
 }

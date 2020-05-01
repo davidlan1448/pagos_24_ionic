@@ -11,6 +11,7 @@ export class InputComponent implements OnInit {
   @Input() isPasswordInput: boolean = false;
   @Input() colorText: string = "black";
   @Input() showBtnInfo: boolean = false;
+  @Input() isTextArea: boolean = false;
 
   @Output("onShowPassword") showPasswordEmit: EventEmitter<
     boolean

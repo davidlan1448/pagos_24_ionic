@@ -3,24 +3,31 @@
     <h4>{{ "register.personalInformation" | translate }}</h4>
   </div>
 
-  <form [formGroup]="LoginForm" class="form">
+  <form [formGroup]="personalForm" class="form">
     <ion-item class="input">
       <ion-label>{{ "register.titleCountry" | translate }}</ion-label>
-      <ion-select value="brown" okText="Okay" cancelText="Dismiss">
-        <ion-select-option value="brown">Brown</ion-select-option>
-        <ion-select-option value="blonde">Blonde</ion-select-option>
-        <ion-select-option value="black">Black</ion-select-option>
-        <ion-select-option value="red">Red</ion-select-option>
+      <ion-select
+        formControlName="country"
+        value=""
+        okText="OK"
+        cancelText="Cancel"
+      >
+        <ion-select-option value="Venezuela">Venezuela</ion-select-option>
+        <ion-select-option value="Uganda">Uganda</ion-select-option>
       </ion-select>
     </ion-item>
 
     <ion-item class="input">
       <ion-label>{{ "register.titleState" | translate }}</ion-label>
-      <ion-select value="brown" okText="Okay" cancelText="Dismiss">
-        <ion-select-option value="brown">Brown</ion-select-option>
-        <ion-select-option value="blonde">Blonde</ion-select-option>
-        <ion-select-option value="black">Black</ion-select-option>
-        <ion-select-option value="red">Red</ion-select-option>
+      <ion-select
+        formControlName="state"
+        value=""
+        okText="OK"
+        cancelText="Cancel"
+      >
+        <ion-select-option value="Lara">Lara</ion-select-option>
+        <ion-select-option value="Falcon">Falcon</ion-select-option>
+        <ion-select-option value="Guarico">Guarico</ion-select-option>
       </ion-select>
     </ion-item>
 
@@ -52,17 +59,22 @@
 
     <InputPer
       [title]="'register.titleCI' | translate"
-      [isTouched]="getAbstractControl('password').value"
+      [isTouched]="getAbstractControl('ci').value"
     >
-      <ion-select value="v" okText="Okay" cancelText="Dismiss">
+      <ion-select
+        formControlName="codeCi"
+        value="v"
+        okText="OK"
+        cancelText="Cancel"
+      >
         <ion-select-option value="v">V</ion-select-option>
         <ion-select-option value="e">E</ion-select-option>
       </ion-select>
 
       <ion-input
         [placeholder]="'register.titleCI' | translate"
-        formControlName="password"
-        [type]="typePassword"
+        formControlName="ci"
+        type="number"
         mode="ios"
       ></ion-input>
     </InputPer>
@@ -75,20 +87,19 @@
         [placeholder]="'register.titlePostalCode' | translate"
         formControlName="postalCode"
         mode="ios"
-        required
-        inputmode="text"
+        type="number"
       ></ion-input>
     </InputPer>
 
     <InputPer
       [title]="'register.titleAddress' | translate"
       [isTouched]="getAbstractControl('address').value"
+      [isTextArea]="true"
     >
       <ion-textarea
         [placeholder]="'register.titleAddress' | translate"
         formControlName="address"
         mode="ios"
-        required
         inputmode="text"
       >
       </ion-textarea>
@@ -102,7 +113,6 @@
         [placeholder]="'register.titleCity' | translate"
         formControlName="city"
         mode="ios"
-        required
         inputmode="text"
       ></ion-input>
     </InputPer>
@@ -111,13 +121,12 @@
       [title]="'register.titleLandLine' | translate"
       [isTouched]="getAbstractControl('landline').value"
       [showBtnInfo]="true"
-      (onClickInfo)="handleShowPassword($event)"
+      (onClickInfo)="handleInfoLandline($event)"
     >
       <ion-input
         [placeholder]="'register.titleLandLine' | translate"
         formControlName="landline"
         mode="ios"
-        required
         type="tel"
       ></ion-input>
     </InputPer>
@@ -126,20 +135,25 @@
       [title]="'register.titleCellPhone' | translate"
       [isTouched]="getAbstractControl('cellphone').value"
       [showBtnInfo]="true"
-      (onClickInfo)="handleShowPassword($event)"
+      (onClickInfo)="handleInfoCellphone($event)"
     >
       <ion-input
         [placeholder]="'register.titleCellPhone' | translate"
         formControlName="cellphone"
         mode="ios"
-        required
         type="tel"
       ></ion-input>
     </InputPer>
 
     <ion-item>
       <ion-label>{{ "register.terms" | translate }}</ion-label>
-      <ion-checkbox slot="start" mode="ios" color="success"></ion-checkbox>
+      <ion-checkbox
+        formControlName="terms"
+        [value]="getAbstractControl('terms').value"
+        slot="start"
+        mode="ios"
+        color="success"
+      ></ion-checkbox>
     </ion-item>
   </form>
 </ng-container>
