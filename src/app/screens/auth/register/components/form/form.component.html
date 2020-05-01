@@ -1,13 +1,21 @@
-<form [formGroup]="LoginForm" class="form">
+<form [formGroup]="registerForm" class="form">
   <InputPer title="Email" [isTouched]="getAbstractControl('email').value">
     <ion-input
       placeholder="Email"
       formControlName="email"
       mode="ios"
       required
-      inputmode="text"
     ></ion-input>
   </InputPer>
+  <p
+    class="messageError"
+    *ngIf="
+      this.getAbstractControl('email').hasError('pattern') &&
+      this.getAbstractControl('email').touched
+    "
+  >
+    {{ "register.invalidEmail" | translate }}
+  </p>
 
   <InputPer
     [title]="'register.titleConfirnEmail' | translate"
@@ -18,9 +26,17 @@
       formControlName="cEmail"
       mode="ios"
       required
-      inputmode="text"
     ></ion-input>
   </InputPer>
+  <p
+    class="messageError"
+    *ngIf="
+      this.getAbstractControl('cEmail').hasError('mustMatch') &&
+      this.getAbstractControl('cEmail').touched
+    "
+  >
+    {{ "register.invalidConfirmEmail" | translate }}
+  </p>
 
   <InputPer
     [title]="'register.titlePassword' | translate"
@@ -33,13 +49,15 @@
       formControlName="password"
       [type]="typePassword"
       mode="ios"
+      autocomplete="off"
+      autocorrect="off"
     ></ion-input>
   </InputPer>
 
   <InputPer
     [title]="'register.titleConfirnPassword' | translate"
     [isPasswordInput]="true"
-    [isTouched]="getAbstractControl('password').value"
+    [isTouched]="getAbstractControl('cPassword').value"
     (onShowPassword)="handleShowCorfirnPassword($event)"
   >
     <ion-input
@@ -47,13 +65,24 @@
       formControlName="cPassword"
       [type]="typeCorfirnPassword"
       mode="ios"
+      autocomplete="off"
+      autocorrect="off"
     ></ion-input>
   </InputPer>
+  <p
+    class="messageError"
+    *ngIf="
+      this.getAbstractControl('cPassword').hasError('mustMatch') &&
+      this.getAbstractControl('cPassword').touched
+    "
+  >
+    {{ "register.invalidConfirmPassword" | translate }}
+  </p>
 
   <InputPer
     [title]="'register.titlePin' | translate"
     [isPasswordInput]="true"
-    [isTouched]="getAbstractControl('password').value"
+    [isTouched]="getAbstractControl('pin').value"
     (onShowPassword)="handleShowPin($event)"
   >
     <ion-input
@@ -61,13 +90,22 @@
       formControlName="pin"
       [type]="typePin"
       mode="ios"
+      max="6"
+      autocomplete="off"
+      autocorrect="off"
     ></ion-input>
   </InputPer>
+  <p
+    class="messageError"
+    *ngIf="this.getAbstractControl('pin').value.length > 7"
+  >
+    {{ "register.min6Chart" | translate }}
+  </p>
 
   <InputPer
     [title]="'register.titleConfirnPin' | translate"
     [isPasswordInput]="true"
-    [isTouched]="getAbstractControl('password').value"
+    [isTouched]="getAbstractControl('cPin').value"
     (onShowPassword)="handleShowCorfirnPin($event)"
   >
     <ion-input
@@ -75,6 +113,17 @@
       formControlName="cPin"
       [type]="typeCorfirnPin"
       mode="ios"
+      autocomplete="off"
+      autocorrect="off"
     ></ion-input>
   </InputPer>
+  <p
+    class="messageError"
+    *ngIf="
+      this.getAbstractControl('cPin').hasError('mustMatch') &&
+      this.getAbstractControl('cPin').touched
+    "
+  >
+    {{ "register.invalidPins" | translate }}
+  </p>
 </form>

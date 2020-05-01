@@ -16,7 +16,7 @@
         "business": "Comercial",
 
         "titleConfirnEmail": "Confirmar email",
-        "titlePassword": "password",
+        "titlePassword": "Contraseña",
         "titleConfirnPassword": "Confirmar contraseña",
         "titlePin": "Pin de operaciones (6 números)",
         "titleConfirnPin": "Confirmar PIN (6 números)",
@@ -35,6 +35,12 @@
         "terms": "He leìdo y acepto los términos y condiciones",
 
         "messageSuccess": "Inicio exitoso",
-        "messageError": "Error al iniciar"
+        "messageError": "Error al iniciar",
+
+        "invalidEmail": "Email invalido",
+        "invalidConfirmEmail": "Los correos no concuerdan",
+        "invalidConfirmPassword": "Las contraseñas no concuerdan",
+        "min6Chart": "Minimo 6 caracteres",
+        "invalidPins": "El PIN no concuerda"
     }
 }

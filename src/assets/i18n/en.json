@@ -35,6 +35,12 @@
         "terms": "I have read and accept the terms and conditions",
 
         "messageSuccess": "successful start",
-        "messageError": "failed to start"
+        "messageError": "failed to start",
+
+        "invalidEmail": "Invalid email",
+        "invalidConfirmEmail": "Emails do not match",
+        "invalidConfirmPassword": "Passwords do not match",
+        "min6Chart": "Min 6 characters",
+        "invalidPins": "The PIN do not match"
     }
 }

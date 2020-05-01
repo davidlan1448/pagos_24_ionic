@@ -9,11 +9,15 @@ export class InputComponent implements OnInit {
   @Input() public title: string = "";
   @Input() public isTouched: boolean = false;
   @Input() isPasswordInput: boolean = false;
-  @Input() colorText: string = 'black';
+  @Input() colorText: string = "black";
   @Input() showBtnInfo: boolean = false;
 
-  @Output("onShowPassword") showPasswordEmit: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output("onClickInfo") infoEmiter: EventEmitter<any> = new EventEmitter<any>();
+  @Output("onShowPassword") showPasswordEmit: EventEmitter<
+    boolean
+  > = new EventEmitter<boolean>();
+  @Output("onClickInfo") infoEmiter: EventEmitter<any> = new EventEmitter<
+    any
+  >();
 
   showPassword: boolean = false;
 
@@ -21,8 +25,7 @@ export class InputComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   focus(): void {
     this.isSelected = true;
@@ -32,9 +35,9 @@ export class InputComponent implements OnInit {
     this.isSelected = false;
   }
 
-  onShowPassword (): void {
+  onShowPassword(): void {
     this.showPassword = !this.showPassword;
-    
+
     this.showPasswordEmit.emit(!this.showPassword);
   }
 
