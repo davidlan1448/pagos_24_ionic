@@ -46,7 +46,6 @@ export class RegisterPage implements OnInit {
 
     this._navigate.navigateForward(["auth/login"], {
       animated: true,
-      animationDirection: 'back',
     });
   }
 
