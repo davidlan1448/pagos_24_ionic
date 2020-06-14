@@ -1,5 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { NavController } from "@ionic/angular";
+import { Router } from "@angular/router";
+import {
+  NativePageTransitions,
+  NativeTransitionOptions,
+} from "@ionic-native/native-page-transitions/ngx";
 
 @Component({
   selector: "app-register",
@@ -17,12 +22,32 @@ export class RegisterPage implements OnInit {
     this.formRegisterPersonal
   );
 
-  constructor(private _navigate: NavController) {}
+  constructor(
+    private _navigate: NavController,
+    private router: Router,
+    private nativePageTransitions: NativePageTransitions
+  ) {}
 
   ngOnInit() {}
 
   goBack() {
-    this._navigate.back();
+    const options: NativeTransitionOptions = {
+      direction: "left",
+      duration: 500,
+      slowdownfactor: 3,
+      slidePixels: 20,
+      iosdelay: 100,
+      androiddelay: 150,
+      fixedPixelsTop: 0,
+      fixedPixelsBottom: 60,
+    };
+
+    this.nativePageTransitions.slide(options);
+
+    this._navigate.navigateForward(["auth/login"], {
+      animated: true,
+      animationDirection: 'back',
+    });
   }
 
   handleValidFormRegister(event): void {

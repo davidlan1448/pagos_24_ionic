@@ -1,29 +1,33 @@
 .container {
-    color: white;
+  color: white;
+
+  .lenguages {
+    margin-top: 10px;
     p {
-        text-align: center;
-        margin: 0;
-        margin-bottom: 3px;
-        font-size: 15px;
+      text-align: center;
+      margin: 0;
+      margin-bottom: 3px;
+      font-size: 15px;
     }
+  }
 
-    .optinons {
-        margin-top: 10px;
+  .optinons {
+    margin-top: 10px;
 
-        display: flex;
-        flex-direction: row;
+    display: flex;
+    flex-direction: row;
 
-        .language {
-            width: 45px;
-            height: 45px;
-            border: 2px white solid;
-            border-radius: 50px;
-            font-size: 20px;
-            margin: 0 5px;
+    .language {
+      width: 45px;
+      height: 45px;
+      border: 2px white solid;
+      border-radius: 50px;
+      font-size: 20px;
+      margin: 0 5px;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+  }
 }

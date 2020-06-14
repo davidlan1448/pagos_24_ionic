@@ -64,10 +64,11 @@ export class LoginPage implements OnInit {
     // cambia el idioma de la aplicacion
     if (event) this.translateService.use(event);
 
+    // animacion de cambio de idioma
     const animation: Animation = this.animationCtrl
       .create()
       .addElement(document.querySelector("#animate"))
-      .duration(500)
+      .duration(700)
       .fromTo("height", event ? "0" : "379px", event ? "379px" : "120px");
 
     animation.play();

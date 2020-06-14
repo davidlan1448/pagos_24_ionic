@@ -11,10 +11,6 @@ const routes: Routes = [
     redirectTo: 'auth',
     pathMatch: 'full'
   },
-  {
-    path: 'lenguage',
-    loadChildren: () => import('./screens/lenguage/lenguage.module').then( m => m.LenguagePageModule)
-  },
 ];
 
 @NgModule({

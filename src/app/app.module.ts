@@ -12,12 +12,15 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { AuthService } from './core/services/auth.service';
+import { AuthService } from "./core/services/auth.service";
+
+import {
+  NativePageTransitions,
+} from "@ionic-native/native-page-transitions/ngx";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
-
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,8 +42,9 @@ export function createTranslateLoader(http: HttpClient) {
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-
     AuthService,
+
+    NativePageTransitions
   ],
   bootstrap: [AppComponent],
 })
